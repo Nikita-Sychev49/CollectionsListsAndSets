@@ -1,6 +1,11 @@
 package model;
 
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.Locale;
 import java.util.Objects;
+
+import static org.apache.commons.lang3.StringUtils.*;
 
 public class Employee {
     private final String firstName;
@@ -10,13 +15,13 @@ public class Employee {
 
 
     public Employee(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstName = capitalize(firstName.toLowerCase());
+        this.lastName = capitalize(lastName.toLowerCase());
     }
 
     public Employee(String firstName, String lastName, double salary, int departament) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstName = firstName.toLowerCase();
+        this.lastName = lastName.toLowerCase();
         this.salary = salary;
         this.departament = departament;
     }
